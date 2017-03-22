@@ -14,4 +14,9 @@ public class Constante implements Noeud {
 	public void accept(Visitor visitor) {
 		visitor.visitConstant(this);
 	}
+
+	@Override
+	public String toString() {
+		return String.valueOf(valeur);
+	}
 }

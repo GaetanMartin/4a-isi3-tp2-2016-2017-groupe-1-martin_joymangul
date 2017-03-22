@@ -17,7 +17,6 @@ public class ExpressionArithmetique {
 		System.out.println("\n postfixe:");
 		Postfix postfix = new Postfix();
 		this.getRacine().accept(postfix);
-		postfix.visit(this.getRacine());
 	}
 
 	public int calculerValeur() {
@@ -33,8 +32,7 @@ public class ExpressionArithmetique {
 		System.out.println("\n infixe:");
 		Infix infix = new Infix();
 		this.getRacine().accept(infix);
-		infix.visit(this.getRacine());
-		
+
 	}
 	
 }

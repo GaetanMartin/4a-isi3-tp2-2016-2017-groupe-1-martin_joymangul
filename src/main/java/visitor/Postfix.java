@@ -13,22 +13,22 @@ public class Postfix implements Visitor {
 
     @Override
     public void visitNegation(Negation negation) {
-        System.out.println(negation.getOpG());
+        negation.getOpG().accept(this);
         System.out.println(negation.getOp());
 
     }
 
     @Override
     public void visitMultiplication(Multiplication multiplication) {
-        System.out.println(multiplication.getOpG());
-        System.out.println(multiplication.getOpD());
+        multiplication.getOpG().accept(this);
+        multiplication.getOpD().accept(this);
         System.out.println(multiplication.getOp());
     }
 
     @Override
     public void visitAddition(Addition addition) {
-        System.out.println(addition.getOpG());
-        System.out.println(addition.getOpD());
+        addition.getOpG().accept(this);
+        addition.getOpD().accept(this);
         System.out.println(addition.getOp());
     }
 

@@ -12,8 +12,6 @@ import visitable.Visitable;
  */
 public interface Visitor {
 
-
-
     void visitNegation(Negation negation);
 
     void visitMultiplication(Multiplication multiplication);
@@ -21,8 +19,5 @@ public interface Visitor {
     void visitAddition(Addition addition);
 
     void visitConstant(Constante constante);
-
-    default void visit(Visitable visitable) {
-    }
 
 }

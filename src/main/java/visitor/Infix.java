@@ -13,22 +13,22 @@ public class Infix implements Visitor {
 
     @Override
     public void visitNegation(Negation negation) {
-        System.out.println(negation.getOpG());
+        negation.getOpG().accept(this);
         System.out.println(negation.getOp());
     }
 
     @Override
     public void visitMultiplication(Multiplication multiplication) {
-        System.out.println(multiplication.getOpG());
+        multiplication.getOpG().accept(this);
         System.out.println(multiplication.getOp());
-        System.out.println(multiplication.getOpD());
+        multiplication.getOpD().accept(this);
     }
 
     @Override
     public void visitAddition(Addition addition) {
-        System.out.println(addition.getOpG());
+        addition.getOpG().accept(this);
         System.out.println(addition.getOp());
-        System.out.println(addition.getOpD());
+        addition.getOpD().accept(this);
     }
 
     @Override
