@@ -1,3 +1,8 @@
+import operation.Addition;
+import operation.Constante;
+import operation.Multiplication;
+import operation.Negation;
+
 public class TestArbreBinaire {
 
 	public static void main(String[] args) {

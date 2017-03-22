@@ -1,3 +1,7 @@
+import visitable.Noeud;
+import visitor.Infix;
+import visitor.Postfix;
+
 public class ExpressionArithmetique {
 	private Noeud racine;
 	
@@ -11,8 +15,9 @@ public class ExpressionArithmetique {
 
 	public void afficherPostFixe() {
 		System.out.println("\n postfixe:");
-		// TODO 
-		
+		Postfix postfix = new Postfix();
+		this.getRacine().accept(postfix);
+		postfix.visit(this.getRacine());
 	}
 
 	public int calculerValeur() {
@@ -26,7 +31,9 @@ public class ExpressionArithmetique {
 	}
 	public void afficherInFixe() {
 		System.out.println("\n infixe:");
-		// TODO 
+		Infix infix = new Infix();
+		this.getRacine().accept(infix);
+		infix.visit(this.getRacine());
 		
 	}
 	

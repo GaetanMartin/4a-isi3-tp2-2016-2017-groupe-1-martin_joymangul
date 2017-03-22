@@ -1,8 +1,12 @@
+package operation;
+
+import visitable.Noeud;
+
 public abstract class OperateurBinaire  extends OperateurUnaire{
 
 	private Noeud opD;
 	
-	public OperateurBinaire(String s,Noeud ng,Noeud nd){
+	public OperateurBinaire(String s, Noeud ng, Noeud nd){
 		super(s,ng);
 		opD=nd;
 	}
