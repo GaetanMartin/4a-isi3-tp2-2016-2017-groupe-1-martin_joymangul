@@ -12,4 +12,9 @@ public class Multiplication extends OperateurBinaire{
 	public void accept(Visitor visitor) {
 		visitor.visitMultiplication(this);
 	}
+
+	@Override
+	public int calculate(Visitor visitor) {
+		return visitor.calculateMultiplication(this);
+	}
 }

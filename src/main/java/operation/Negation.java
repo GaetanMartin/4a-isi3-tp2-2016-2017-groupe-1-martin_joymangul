@@ -11,4 +11,9 @@ public class Negation extends OperateurUnaire{
 	public void accept(Visitor visitor) {
 		visitor.visitNegation(this);
 	}
+
+	@Override
+	public int calculate(Visitor visitor) {
+		return visitor.calculateNegation(this);
+	}
 }

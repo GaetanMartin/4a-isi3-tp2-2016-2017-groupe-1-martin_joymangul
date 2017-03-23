@@ -8,4 +8,6 @@ import visitor.Visitor;
 public interface Visitable {
 
     void accept(Visitor visitor);
+
+    int calculate(Visitor visitor);
 }

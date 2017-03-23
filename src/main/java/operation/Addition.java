@@ -12,4 +12,9 @@ public class Addition extends OperateurBinaire{
 		visitor.visitAddition(this);
 	}
 
+	@Override
+	public int calculate(Visitor visitor) {
+		return visitor.calculateAddition(this);
+	}
+
 }

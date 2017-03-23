@@ -4,8 +4,6 @@ import operation.Addition;
 import operation.Constante;
 import operation.Multiplication;
 import operation.Negation;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-import visitable.Visitable;
 
 /**
  * Created by p1509413 on 22/03/2017.
@@ -19,5 +17,13 @@ public interface Visitor {
     void visitAddition(Addition addition);
 
     void visitConstant(Constante constante);
+
+    int calculateNegation(Negation negation);
+
+    int calculateMultiplication(Multiplication multiplication);
+
+    int calculateAddition(Addition addition);
+
+    int calculateConstant(Constante constante);
 
 }

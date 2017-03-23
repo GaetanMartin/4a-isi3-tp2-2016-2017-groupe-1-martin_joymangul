@@ -16,6 +16,11 @@ public class Constante implements Noeud {
 	}
 
 	@Override
+	public int calculate(Visitor visitor) {
+		return visitor.calculateConstant(this);
+	}
+
+	@Override
 	public String toString() {
 		return String.valueOf(valeur);
 	}

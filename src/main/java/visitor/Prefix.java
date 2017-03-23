@@ -4,7 +4,6 @@ import operation.Addition;
 import operation.Constante;
 import operation.Multiplication;
 import operation.Negation;
-import visitor.Visitor;
 
 /**
  * Created by p1509413 on 22/03/2017.
@@ -34,5 +33,25 @@ public class Prefix implements Visitor {
     @Override
     public void visitConstant(Constante constante) {
         System.out.println(constante.getValeur());
+    }
+
+    @Override
+    public int calculateNegation(Negation negation) {
+        return 0;
+    }
+
+    @Override
+    public int calculateMultiplication(Multiplication multiplication) {
+        return 0;
+    }
+
+    @Override
+    public int calculateAddition(Addition addition) {
+        return 0;
+    }
+
+    @Override
+    public int calculateConstant(Constante constante) {
+        return 0;
     }
 }

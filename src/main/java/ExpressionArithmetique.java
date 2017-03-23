@@ -20,8 +20,8 @@ public class ExpressionArithmetique {
 	}
 
 	public int calculerValeur() {
-		// TODO 
-		return 0;
+		Infix infix = new Infix();
+		return this.getRacine().calculate(infix);
 	}
 
 	public int calculerHauteur() {
