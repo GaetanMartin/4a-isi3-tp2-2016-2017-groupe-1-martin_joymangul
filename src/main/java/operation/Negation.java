@@ -16,4 +16,9 @@ public class Negation extends OperateurUnaire{
 	public int calculate(Visitor visitor) {
 		return visitor.calculateNegation(this);
 	}
+
+	@Override
+	public int height(Visitor visitor) {
+		return visitor.height(this);
+	}
 }

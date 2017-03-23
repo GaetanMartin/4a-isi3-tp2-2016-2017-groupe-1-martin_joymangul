@@ -17,4 +17,9 @@ public class Multiplication extends OperateurBinaire{
 	public int calculate(Visitor visitor) {
 		return visitor.calculateMultiplication(this);
 	}
+
+	@Override
+	public int height(Visitor visitor) {
+		return visitor.height(this);
+	}
 }

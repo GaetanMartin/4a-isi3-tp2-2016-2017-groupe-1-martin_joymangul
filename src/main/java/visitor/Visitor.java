@@ -1,9 +1,6 @@
 package visitor;
 
-import operation.Addition;
-import operation.Constante;
-import operation.Multiplication;
-import operation.Negation;
+import operation.*;
 
 /**
  * Created by p1509413 on 22/03/2017.
@@ -25,5 +22,11 @@ public interface Visitor {
     int calculateAddition(Addition addition);
 
     int calculateConstant(Constante constante);
+
+    int height(Constante constante);
+
+    int height(OperateurBinaire oB);
+
+    int height(OperateurUnaire oU);
 
 }

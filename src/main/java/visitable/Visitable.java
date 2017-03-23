@@ -10,4 +10,6 @@ public interface Visitable {
     void accept(Visitor visitor);
 
     int calculate(Visitor visitor);
+
+    int height(Visitor visitor);
 }

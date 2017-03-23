@@ -1,9 +1,6 @@
 package visitor;
 
-import operation.Addition;
-import operation.Constante;
-import operation.Multiplication;
-import operation.Negation;
+import operation.*;
 
 /**
  * Created by p1509413 on 22/03/2017.
@@ -54,4 +51,23 @@ public class Infix implements Visitor {
     public int calculateConstant(Constante constante) {
         return constante.getValeur();
     }
+
+    @Override
+    public int height(Constante constante) {
+            return 1;
+    }
+
+    @Override
+    public int height(OperateurBinaire oB) {
+        int left = oB.getOpG().height(this) + 1;
+        int right =  oB.getOpD().height(this) + 1;
+        return  Math.max(left,right);
+    }
+
+    @Override
+    public int height(OperateurUnaire oU) {
+        return oU.getOpG().height(this) + 1;
+    }
+
+
 }

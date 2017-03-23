@@ -1,9 +1,6 @@
 package visitor;
 
-import operation.Addition;
-import operation.Constante;
-import operation.Multiplication;
-import operation.Negation;
+import operation.*;
 
 /**
  * Created by p1509413 on 22/03/2017.
@@ -55,4 +52,21 @@ public class Postfix implements Visitor {
     public int calculateConstant(Constante constante) {
         return 0;
     }
+
+    @Override
+    public int height(Constante constante) {
+        return 0;
+    }
+
+    @Override
+    public int height(OperateurBinaire oB) {
+        return 0;
+    }
+
+    @Override
+    public int height(OperateurUnaire oU) {
+        return 0;
+    }
+
+
 }

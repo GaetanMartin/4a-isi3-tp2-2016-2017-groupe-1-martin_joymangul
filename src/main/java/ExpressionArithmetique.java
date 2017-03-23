@@ -25,8 +25,8 @@ public class ExpressionArithmetique {
 	}
 
 	public int calculerHauteur() {
-		// TODO 
-		return 0;
+		Infix infix = new Infix();
+		return this.getRacine().height(infix);
 	}
 	public void afficherInFixe() {
 		System.out.println("\n infixe:");
