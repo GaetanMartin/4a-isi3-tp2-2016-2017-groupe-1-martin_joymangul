@@ -51,19 +51,4 @@ public class Prefix implements Visitor {
     public int calculateConstant(Constante constante) {
         return 0;
     }
-
-    @Override
-    public int height(Constante constante) {
-        return 0;
-    }
-
-    @Override
-    public int height(OperateurBinaire oB) {
-        return 0;
-    }
-
-    @Override
-    public int height(OperateurUnaire oU) {
-        return 0;
-    }
 }

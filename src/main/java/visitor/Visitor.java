@@ -23,10 +23,18 @@ public interface Visitor {
 
     int calculateConstant(Constante constante);
 
-    int height(Constante constante);
+    default int height() {
+        return 1;
+    }
 
-    int height(OperateurBinaire oB);
+    default int height(OperateurBinaire oB) {
+        int left = oB.getOpG().height(this) + 1;
+        int right =  oB.getOpD().height(this) + 1;
+        return  Math.max(left,right);
+    }
 
-    int height(OperateurUnaire oU);
+    default int height(OperateurUnaire oU) {
+        return oU.getOpG().height(this) + 1;
+    }
 
 }

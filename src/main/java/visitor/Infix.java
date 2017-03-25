@@ -52,22 +52,5 @@ public class Infix implements Visitor {
         return constante.getValeur();
     }
 
-    @Override
-    public int height(Constante constante) {
-            return 1;
-    }
-
-    @Override
-    public int height(OperateurBinaire oB) {
-        int left = oB.getOpG().height(this) + 1;
-        int right =  oB.getOpD().height(this) + 1;
-        return  Math.max(left,right);
-    }
-
-    @Override
-    public int height(OperateurUnaire oU) {
-        return oU.getOpG().height(this) + 1;
-    }
-
 
 }
