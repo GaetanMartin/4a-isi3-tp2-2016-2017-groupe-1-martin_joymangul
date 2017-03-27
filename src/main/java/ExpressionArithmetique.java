@@ -1,5 +1,6 @@
 import visitable.Noeud;
 import visitor.Infix;
+import visitor.InfixParentheses;
 import visitor.Postfix;
 
 public class ExpressionArithmetique {
@@ -34,5 +35,10 @@ public class ExpressionArithmetique {
 		this.getRacine().accept(infix);
 
 	}
-	
+
+    public void afficherInFixeParenthesis() {
+		System.out.println("\n infixe parenthesis:");
+		InfixParentheses infix = new InfixParentheses();
+		this.getRacine().accept(infix);
+    }
 }

@@ -2,6 +2,7 @@ import operation.Addition;
 import operation.Constante;
 import operation.Multiplication;
 import operation.Negation;
+import visitable.Noeud;
 
 public class TestArbreBinaire {
 
@@ -16,6 +17,14 @@ public class TestArbreBinaire {
 		System.out.println("\n calcul valeur: " + exp.calculerValeur());
 		System.out.println("\n calcul hauteur: " + exp.calculerHauteur());
 		exp.afficherPostFixe();
+
+		// 7*(2+2)=28
+		Noeud racine2 = new Multiplication(
+				new Constante(7),
+				new Addition(new Constante(2), new Constante(2))
+		);
+		ExpressionArithmetique exp2 = new ExpressionArithmetique(racine2);
+		exp2.afficherInFixeParenthesis();
 
 	}
 
