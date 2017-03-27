@@ -9,27 +9,27 @@ public class Infix implements Visitor {
 
     @Override
     public void visitNegation(Negation negation) {
-        System.out.println(negation.getOp());
+        System.out.print(negation.getOp());
         negation.getOpG().accept(this);
     }
 
     @Override
     public void visitMultiplication(Multiplication multiplication) {
         multiplication.getOpG().accept(this);
-        System.out.println(multiplication.getOp());
+        System.out.print(multiplication.getOp());
         multiplication.getOpD().accept(this);
     }
 
     @Override
     public void visitAddition(Addition addition) {
         addition.getOpG().accept(this);
-        System.out.println(addition.getOp());
+        System.out.print(addition.getOp());
         addition.getOpD().accept(this);
     }
 
     @Override
     public void visitConstant(Constante constante) {
-        System.out.println(constante.getValeur());
+        System.out.print(constante.getValeur());
     }
 
     @Override
