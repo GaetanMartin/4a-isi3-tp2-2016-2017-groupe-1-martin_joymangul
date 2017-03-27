@@ -22,4 +22,9 @@ public class Multiplication extends OperateurBinaire{
 	public int height(Visitor visitor) {
 		return visitor.height(this);
 	}
+
+	@Override
+	public int getPriority() {
+		return 2;
+	}
 }

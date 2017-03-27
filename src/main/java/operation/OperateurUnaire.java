@@ -18,6 +18,11 @@ public abstract class OperateurUnaire implements Noeud {
 	}
 
 	@Override
+	public int getPriority() {
+		return 1;
+	}
+
+	@Override
 	public String toString() {
 		return this.getOp();
 	}

@@ -21,4 +21,7 @@ public class Negation extends OperateurUnaire{
 	public int height(Visitor visitor) {
 		return visitor.height(this);
 	}
+
+	@Override
+	public int getPriority() {return 3;}
 }

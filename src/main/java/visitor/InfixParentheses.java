@@ -18,8 +18,8 @@ public class InfixParentheses extends Infix {
         System.out.print(")");
     }
 
-    private void displayNode(Noeud node) {
-        if (node instanceof Addition) {
+    private void displayNode(int currentPriority, Noeud node) {
+        if (node.getPriority() > 0 && currentPriority > node.getPriority()) {
             displayNodeBetweenParentheses(node);
         } else {
             node.accept(this);
@@ -30,15 +30,22 @@ public class InfixParentheses extends Infix {
     public void visitNegation(Negation negation) {
         System.out.print("(");
         System.out.print(negation.getOp());
-        negation.getOpG().accept(this);
+        displayNode(negation.getPriority(), negation.getOpG());
         System.out.print(")");
 
     }
 
     @Override
     public void visitMultiplication(Multiplication multiplication) {
-        displayNode(multiplication.getOpG());
+        displayNode(multiplication.getPriority(), multiplication.getOpG());
         System.out.print(multiplication.getOp());
-        displayNode(multiplication.getOpD());
+        displayNode(multiplication.getPriority(), multiplication.getOpD());
+    }
+
+    @Override
+    public void visitAddition(Addition addition) {
+        displayNode(addition.getPriority(), addition.getOpG());
+        System.out.print(addition.getOp());
+        displayNode(addition.getPriority(), addition.getOpD());
     }
 }

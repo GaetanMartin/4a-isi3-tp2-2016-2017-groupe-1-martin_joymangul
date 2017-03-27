@@ -15,4 +15,9 @@ public abstract class OperateurBinaire  extends OperateurUnaire{
 		return opD;
 	}
 
+	@Override
+	public int getPriority() {
+		return 1;
+	}
+
 }
