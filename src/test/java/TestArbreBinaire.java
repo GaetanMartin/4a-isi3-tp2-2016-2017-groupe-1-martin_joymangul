@@ -18,10 +18,10 @@ public class TestArbreBinaire {
 		System.out.println("\n calcul hauteur: " + exp.calculerHauteur());
 		exp.afficherPostFixe();
 
-		// 7*(2+2)=28
+		// 7*(5+(-2))=21
 		Noeud racine2 = new Multiplication(
 				new Constante(7),
-				new Addition(new Constante(2), new Constante(2))
+				new Addition(new Constante(5), new Negation(new Constante(2)))
 		);
 		ExpressionArithmetique exp2 = new ExpressionArithmetique(racine2);
 		exp2.afficherInFixeParenthesis();
