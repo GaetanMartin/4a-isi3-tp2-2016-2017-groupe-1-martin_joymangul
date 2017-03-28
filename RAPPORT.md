@@ -1,4 +1,4 @@
-** MARTIN Gaëtan :**
+**MARTIN Gaëtan :**
 
 **JOYMANGUL Jensen :**
 
@@ -84,4 +84,45 @@ default int height(OperateurUnaire oU) {
 ```
 
 ## Question 6
-*Expliquer le code ajouté*
+
+Ajout d'une méthode pour définir la priorité d'un noeud : 
+
+```java
+public interface Noeud extends Visitable {
+    default int getPriority() {return 0;}	
+}
+```
+
+Ainsi on peut ordonner les noeuds (opérations) par priorité : Négation (3) > Multiplication (2) > Addition (1) > Constante (0), en surchargeant la méthode getPriority() au besoin. 
+Puis pour savoir si il faut afficher des parenthèses, il suffit de comparer la priorité du noeud courrant (père) à ses fils droits et gauches :
+```java
+if (node.getPriority() > 0 && currentPriority > node.getPriority()) {
+    displayNodeBetweenParentheses(node);
+} else {
+    node.accept(this);
+}
+```
+
+Ajout d'un nouveau visiteur (InfixParentheses) qui hérite d'Infix. Ainsi, il suffit de redéfinir les méthodes pour lesquelles il faut ajouter l'affichage des parenthèses : (exemple ci-dessous pour la multipication)
+```java
+@Override
+public void visitMultiplication(Multiplication multiplication) {
+    displayNode(multiplication.getPriority(), multiplication.getOpG());
+    System.out.print(multiplication.getOp());
+    displayNode(multiplication.getPriority(), multiplication.getOpD());
+}
+
+private void displayNodeBetweenParentheses(Noeud node) {
+    System.out.print("(");
+    node.accept(this);
+    System.out.print(")");
+}
+
+private void displayNode(int currentPriority, Noeud node) {
+    if (node.getPriority() > 0 && currentPriority > node.getPriority()) {
+        displayNodeBetweenParentheses(node);
+    } else {
+        node.accept(this);
+    }
+}    
+```
