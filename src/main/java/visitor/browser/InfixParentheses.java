@@ -1,7 +1,6 @@
-package visitor;
+package visitor.browser;
 
 import operation.Addition;
-import operation.Constante;
 import operation.Multiplication;
 import operation.Negation;
 import visitable.Noeud;

@@ -1,7 +1,8 @@
 package operation;
 
 import visitable.Noeud;
-import visitor.Visitor;
+import visitor.browser.Visitor;
+import visitor.calculator.Calculator;
 
 public class Constante implements Noeud {
 	private int valeur;
@@ -16,13 +17,8 @@ public class Constante implements Noeud {
 	}
 
 	@Override
-	public int calculate(Visitor visitor) {
-		return visitor.calculateConstant(this);
-	}
-
-	@Override
-	public int height(Visitor visitor) {
-		return visitor.height();
+	public int accept(Calculator visitor) {
+		return visitor.calculateConstante(this);
 	}
 
 	@Override

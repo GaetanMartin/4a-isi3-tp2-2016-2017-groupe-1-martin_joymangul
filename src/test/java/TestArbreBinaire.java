@@ -1,3 +1,4 @@
+import expression.ExpressionArithmetique;
 import operation.Addition;
 import operation.Constante;
 import operation.Multiplication;
@@ -17,6 +18,7 @@ public class TestArbreBinaire {
 		System.out.println("\n calcul valeur: " + exp.calculerValeur());
 		System.out.println("\n calcul hauteur: " + exp.calculerHauteur());
 		exp.afficherPostFixe();
+		exp.afficherPreFixe();
 
 		// 7*(5+(-2))=21
 		Noeud racine2 = new Multiplication(

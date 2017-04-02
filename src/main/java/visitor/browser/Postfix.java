@@ -1,4 +1,4 @@
-package visitor;
+package visitor.browser;
 
 import operation.*;
 
@@ -31,26 +31,6 @@ public class Postfix implements Visitor {
     @Override
     public void visitConstant(Constante constante) {
         System.out.print(constante.getValeur());
-    }
-
-    @Override
-    public int calculateNegation(Negation negation) {
-        return 0;
-    }
-
-    @Override
-    public int calculateMultiplication(Multiplication multiplication) {
-        return 0;
-    }
-
-    @Override
-    public int calculateAddition(Addition addition) {
-        return 0;
-    }
-
-    @Override
-    public int calculateConstant(Constante constante) {
-        return 0;
     }
 
 

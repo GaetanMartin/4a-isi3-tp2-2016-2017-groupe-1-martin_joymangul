@@ -1,4 +1,4 @@
-package visitor;
+package visitor.browser;
 
 import operation.*;
 
@@ -30,26 +30,6 @@ public class Infix implements Visitor {
     @Override
     public void visitConstant(Constante constante) {
         System.out.print(constante.getValeur());
-    }
-
-    @Override
-    public int calculateNegation(Negation negation) {
-        return - negation.getOpG().calculate(this);
-    }
-
-    @Override
-    public int calculateMultiplication(Multiplication multiplication) {
-        return multiplication.getOpG().calculate(this) * multiplication.getOpD().calculate(this);
-    }
-
-    @Override
-    public int calculateAddition(Addition addition) {
-        return addition.getOpG().calculate(this) + addition.getOpD().calculate(this);
-    }
-
-    @Override
-    public int calculateConstant(Constante constante) {
-        return constante.getValeur();
     }
 
 

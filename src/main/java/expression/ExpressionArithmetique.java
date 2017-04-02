@@ -1,7 +1,13 @@
+package expression;
+
 import visitable.Noeud;
-import visitor.Infix;
-import visitor.InfixParentheses;
-import visitor.Postfix;
+import visitor.browser.Infix;
+import visitor.browser.InfixParentheses;
+import visitor.browser.Postfix;
+import visitor.browser.Prefix;
+import visitor.calculator.Calculator;
+import visitor.calculator.HeightCalculator;
+import visitor.calculator.ValueCalculator;
 
 public class ExpressionArithmetique {
 	private Noeud racine;
@@ -20,14 +26,20 @@ public class ExpressionArithmetique {
 		this.getRacine().accept(postfix);
 	}
 
+	public void afficherPreFixe() {
+		System.out.println("\n prefixe:");
+		Prefix prefix = new Prefix();
+		this.getRacine().accept(prefix);
+	}
+
 	public int calculerValeur() {
-		Infix infix = new Infix();
-		return this.getRacine().calculate(infix);
+		ValueCalculator valueCalculator = new ValueCalculator();
+		return this.getRacine().accept(valueCalculator);
 	}
 
 	public int calculerHauteur() {
-		Infix infix = new Infix();
-		return this.getRacine().height(infix);
+		HeightCalculator heightCalculator = new HeightCalculator();
+		return this.getRacine().accept(heightCalculator);
 	}
 	public void afficherInFixe() {
 		System.out.println("\n infixe:");

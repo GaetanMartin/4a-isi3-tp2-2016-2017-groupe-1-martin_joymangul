@@ -1,6 +1,7 @@
 package operation;
 import visitable.Noeud;
-import visitor.Visitor;
+import visitor.browser.Visitor;
+import visitor.calculator.Calculator;
 
 public class Multiplication extends OperateurBinaire{
 
@@ -14,13 +15,8 @@ public class Multiplication extends OperateurBinaire{
 	}
 
 	@Override
-	public int calculate(Visitor visitor) {
+	public int accept(Calculator visitor) {
 		return visitor.calculateMultiplication(this);
-	}
-
-	@Override
-	public int height(Visitor visitor) {
-		return visitor.height(this);
 	}
 
 	@Override
