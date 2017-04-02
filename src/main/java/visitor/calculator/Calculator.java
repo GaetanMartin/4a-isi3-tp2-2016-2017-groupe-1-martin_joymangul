@@ -1,20 +1,10 @@
 package visitor.calculator;
 
-import operation.binaire.Addition;
-import operation.binaire.Multiplication;
-import operation.unaire.Constante;
-import operation.unaire.Negation;
+import visitor.VisitorI;
 
 /**
  * Created by Gaetan on 02/04/2017.
  */
-public interface Calculator {
+public abstract class Calculator implements VisitorI {
 
-    Integer calculateNegation(Negation negation);
-
-    Integer calculateMultiplication(Multiplication multiplication);
-
-    Integer calculateAddition(Addition addition);
-
-    Integer calculateConstante(Constante constante);
 }

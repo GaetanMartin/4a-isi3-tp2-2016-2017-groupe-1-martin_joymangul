@@ -4,35 +4,41 @@ import operation.binaire.Addition;
 import operation.binaire.Multiplication;
 import operation.unaire.Constante;
 import operation.unaire.Negation;
+import visitable.Value;
+import visitor.VisitorI;
 
 /**
  * Created by p1509413 on 22/03/2017.
  */
-public class Infix implements Visitor {
+public class Infix extends Browser {
 
     @Override
-    public void visitNegation(Negation negation) {
+    public Value visit(Negation negation) {
         System.out.print(negation.getOp());
         negation.getOpG().accept(this);
+        return null;
     }
 
     @Override
-    public void visitMultiplication(Multiplication multiplication) {
+    public Value visit(Multiplication multiplication) {
         multiplication.getOpG().accept(this);
         System.out.print(multiplication.getOp());
         multiplication.getOpD().accept(this);
+        return null;
     }
 
     @Override
-    public void visitAddition(Addition addition) {
+    public Value visit(Addition addition) {
         addition.getOpG().accept(this);
         System.out.print(addition.getOp());
         addition.getOpD().accept(this);
+        return null;
     }
 
     @Override
-    public void visitConstant(Constante constante) {
+    public Value visit(Constante constante) {
         System.out.print(constante.getValeur());
+        return null;
     }
 
 

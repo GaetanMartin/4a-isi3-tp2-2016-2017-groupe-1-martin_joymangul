@@ -1,24 +1,23 @@
 package operation.unaire;
 
 import visitable.Noeud;
-import visitor.browser.Visitor;
-import visitor.calculator.Calculator;
+import visitable.Value;
+import visitor.VisitorI;
 
 public class Constante implements Noeud {
-	private int valeur;
+	private Value valeur;
+
 	public Constante(int v){
-		valeur = v;
-	}
-	public int getValeur(){return valeur;}
-
-	@Override
-	public void accept(Visitor visitor) {
-		visitor.visitConstant(this);
+		valeur = new Value(v);
 	}
 
+	public Constante(Value v) { valeur = v;}
+
+	public Value getValeur(){return valeur;}
+
 	@Override
-	public int accept(Calculator visitor) {
-		return visitor.calculateConstante(this);
+	public Value accept(VisitorI visitor) {
+		return visitor.visit(this);
 	}
 
 	@Override

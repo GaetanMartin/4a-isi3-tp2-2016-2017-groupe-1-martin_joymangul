@@ -1,28 +1,29 @@
-package visitor.browser;
+package visitor;
 
 import operation.binaire.Addition;
 import operation.binaire.Multiplication;
 import operation.unaire.Constante;
 import operation.unaire.Negation;
+import visitable.Value;
 
 /**
  * Created by p1509413 on 22/03/2017.
  */
-public interface Visitor {
+public interface VisitorI {
 
-    void visitNegation(Negation negation);
+    Value visit(Negation negation);
 
-    void visitMultiplication(Multiplication multiplication);
+    Value visit(Multiplication multiplication);
 
-    void visitAddition(Addition addition);
+    Value visit(Addition addition);
 
-    void visitConstant(Constante constante);
+    Value visit(Constante constante);
 
-//    int calculateNegation(Negation negation);
+//    int visit(Negation negation);
 //
-//    int calculateMultiplication(Multiplication multiplication);
+//    int visit(Multiplication multiplication);
 //
-//    int calculateAddition(Addition addition);
+//    int visit(Addition addition);
 //
 //    int calculateConstant(Constante constante);
 //

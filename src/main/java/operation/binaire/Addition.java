@@ -1,7 +1,7 @@
 package operation.binaire;
 import visitable.Noeud;
-import visitor.browser.Visitor;
-import visitor.calculator.Calculator;
+import visitable.Value;
+import visitor.VisitorI;
 
 public class Addition extends OperateurBinaire{
 	public Addition(Noeud ng, Noeud nd) {
@@ -9,13 +9,8 @@ public class Addition extends OperateurBinaire{
 	}
 
 	@Override
-	public void accept(Visitor visitor) {
-		visitor.visitAddition(this);
-	}
-
-	@Override
-	public int accept(Calculator visitor) {
-		return visitor.calculateAddition(this);
+	public Value accept(VisitorI visitor) {
+		return visitor.visit(this);
 	}
 
 }

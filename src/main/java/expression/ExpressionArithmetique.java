@@ -34,12 +34,12 @@ public class ExpressionArithmetique {
 
 	public int calculerValeur() {
 		ValueCalculator valueCalculator = new ValueCalculator();
-		return this.getRacine().accept(valueCalculator);
+		return this.getRacine().accept(valueCalculator).getValue();
 	}
 
 	public int calculerHauteur() {
 		HeightCalculator heightCalculator = new HeightCalculator();
-		return this.getRacine().accept(heightCalculator);
+		return this.getRacine().accept(heightCalculator).getValue();
 	}
 	public void afficherInFixe() {
 		System.out.println("\n infixe:");

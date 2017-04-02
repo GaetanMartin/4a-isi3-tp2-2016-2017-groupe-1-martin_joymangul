@@ -4,29 +4,30 @@ import operation.binaire.Addition;
 import operation.binaire.Multiplication;
 import operation.unaire.Constante;
 import operation.unaire.Negation;
+import visitable.Value;
 
 /**
  * Created by Gaetan on 02/04/2017.
  */
-public class HeightCalculator implements Calculator {
+public class HeightCalculator extends Calculator {
 
     @Override
-    public Integer calculateNegation(Negation negation) {
-        return 1 + negation.getOpG().accept(this);
+    public Value visit(Negation negation) {
+        return negation.getOpG().accept(this).add(1);
     }
 
     @Override
-    public Integer calculateMultiplication(Multiplication multiplication) {
-        return 1 + Math.max(multiplication.getOpG().accept(this), multiplication.getOpD().accept(this));
+    public Value visit(Multiplication multiplication) {
+        return multiplication.getOpG().accept(this).max(multiplication.getOpD().accept(this)).add(1);
     }
 
     @Override
-    public Integer calculateAddition(Addition addition) {
-        return 1 + Math.max(addition.getOpG().accept(this), addition.getOpD().accept(this));
+    public Value visit(Addition addition) {
+        return addition.getOpG().accept(this).max(addition.getOpD().accept(this)).add(1);
     }
 
     @Override
-    public Integer calculateConstante(Constante constante) {
-        return 1;
+    public Value visit(Constante constante) {
+        return new Value(1);
     }
 }

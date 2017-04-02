@@ -1,14 +1,11 @@
 package visitable;
 
-import visitor.browser.Visitor;
-import visitor.calculator.Calculator;
+import visitor.VisitorI;
 
 /**
  * Created by p1509413 on 22/03/2017.
  */
 public interface Visitable {
 
-    void accept(Visitor visitor);
-
-    int accept(Calculator visitor);
+    Value accept(VisitorI visitor);
 }

@@ -4,6 +4,7 @@ import operation.binaire.Addition;
 import operation.binaire.Multiplication;
 import operation.unaire.Negation;
 import visitable.Noeud;
+import visitable.Value;
 
 /**
  * Created by Gaetan on 27/03/2017.
@@ -26,25 +27,28 @@ public class InfixParentheses extends Infix {
     }
 
     @Override
-    public void visitNegation(Negation negation) {
+    public Value visit(Negation negation) {
         System.out.print("(");
         System.out.print(negation.getOp());
         displayNode(negation.getPriority(), negation.getOpG());
         System.out.print(")");
 
+        return null;
     }
 
     @Override
-    public void visitMultiplication(Multiplication multiplication) {
+    public Value visit(Multiplication multiplication) {
         displayNode(multiplication.getPriority(), multiplication.getOpG());
         System.out.print(multiplication.getOp());
         displayNode(multiplication.getPriority(), multiplication.getOpD());
+        return null;
     }
 
     @Override
-    public void visitAddition(Addition addition) {
+    public Value visit(Addition addition) {
         displayNode(addition.getPriority(), addition.getOpG());
         System.out.print(addition.getOp());
         displayNode(addition.getPriority(), addition.getOpD());
+        return null;
     }
 }

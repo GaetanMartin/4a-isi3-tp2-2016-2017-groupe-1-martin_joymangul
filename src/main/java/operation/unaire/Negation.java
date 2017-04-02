@@ -1,7 +1,7 @@
 package operation.unaire;
 import visitable.Noeud;
-import visitor.browser.Visitor;
-import visitor.calculator.Calculator;
+import visitable.Value;
+import visitor.VisitorI;
 
 public class Negation extends OperateurUnaire{
 	public Negation(Noeud n) {
@@ -9,13 +9,8 @@ public class Negation extends OperateurUnaire{
 	}
 
 	@Override
-	public void accept(Visitor visitor) {
-		visitor.visitNegation(this);
-	}
-
-	@Override
-	public int accept(Calculator visitor) {
-		return visitor.calculateNegation(this);
+	public Value accept(VisitorI visitor) {
+		return visitor.visit(this);
 	}
 
 	@Override
