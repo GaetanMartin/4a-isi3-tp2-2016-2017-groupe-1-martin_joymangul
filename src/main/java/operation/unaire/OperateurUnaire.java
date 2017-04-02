@@ -1,4 +1,4 @@
-package operation;
+package operation.unaire;
 
 import visitable.Noeud;
 
@@ -6,7 +6,7 @@ public abstract class OperateurUnaire implements Noeud {
 	private String op;
 	private Noeud opG;
 	
-	OperateurUnaire(String s, Noeud n){
+	protected OperateurUnaire(String s, Noeud n){
 		op=s;
 		opG=n;
 	}

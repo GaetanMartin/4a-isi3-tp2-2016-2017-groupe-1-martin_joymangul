@@ -1,6 +1,9 @@
 package visitor.calculator;
 
-import operation.*;
+import operation.binaire.Addition;
+import operation.binaire.Multiplication;
+import operation.unaire.Constante;
+import operation.unaire.Negation;
 
 /**
  * Created by Gaetan on 02/04/2017.

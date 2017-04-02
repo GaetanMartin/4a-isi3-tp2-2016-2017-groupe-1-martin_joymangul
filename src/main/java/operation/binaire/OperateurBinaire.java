@@ -1,8 +1,9 @@
-package operation;
+package operation.binaire;
 
+import operation.unaire.OperateurUnaire;
 import visitable.Noeud;
 
-public abstract class OperateurBinaire  extends OperateurUnaire{
+public abstract class OperateurBinaire  extends OperateurUnaire {
 
 	private Noeud opD;
 	

@@ -1,8 +1,8 @@
 package visitor.browser;
 
-import operation.Addition;
-import operation.Multiplication;
-import operation.Negation;
+import operation.binaire.Addition;
+import operation.binaire.Multiplication;
+import operation.unaire.Negation;
 import visitable.Noeud;
 
 /**

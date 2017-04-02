@@ -1,8 +1,8 @@
 import expression.ExpressionArithmetique;
-import operation.Addition;
-import operation.Constante;
-import operation.Multiplication;
-import operation.Negation;
+import operation.binaire.Addition;
+import operation.unaire.Constante;
+import operation.binaire.Multiplication;
+import operation.unaire.Negation;
 import visitable.Noeud;
 
 public class TestArbreBinaire {

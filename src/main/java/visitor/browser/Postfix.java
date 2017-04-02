@@ -1,6 +1,9 @@
 package visitor.browser;
 
-import operation.*;
+import operation.binaire.Addition;
+import operation.binaire.Multiplication;
+import operation.unaire.Constante;
+import operation.unaire.Negation;
 
 /**
  * Created by p1509413 on 22/03/2017.

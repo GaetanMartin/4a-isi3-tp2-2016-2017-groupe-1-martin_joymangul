@@ -1,4 +1,4 @@
-package operation;
+package operation.binaire;
 import visitable.Noeud;
 import visitor.browser.Visitor;
 import visitor.calculator.Calculator;
